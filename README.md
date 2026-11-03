@@ -5,8 +5,6 @@
 Jiayi Ding · Jianyi (Nancy) Teng · Mahesh Nidhruva
 Final project, DATASCI 266 (Natural Language Processing), UC Berkeley MIDS, Spring 2025
 
-[Read the paper](paper/mitigating-bias-in-fake-news-detection.pdf)
-
 ## The problem
 
 Fake news detectors are usually trained as a single classifier: real or fake. Once AI-generated text enters the mix, that design develops a blind spot. In our baselines, every model detected AI-written fake news far more reliably than human-written fake news. The models had learned the stylistic fingerprints of LLM output rather than the markers of deception itself.
@@ -37,15 +35,6 @@ We asked: does separating *who wrote it* from *is it true* reduce that bias?
 **Two-stage results:** the source-first model reached about 86% accuracy and was strongest at catching AI-written fakes. The veracity-first model showed higher recall across categories but slightly underperformed on AI-written real news.
 
 **What didn't work:** adding hand-built stylometric features (readability, sentiment, structure) to ModernBERT embeddings kept performance on AI-written text but slightly hurt human-written classes. The features added noise to already strong embeddings.
-
-## Repository structure
-
-    paper/                         corrected paper (PDF)
-    slides/                        final presentation
-    notebooks/baselines/           transformer baselines (Ding, Teng)
-    notebooks/bias_analysis/       SHAP, n-gram, robustness, augmentation (Teng)
-    notebooks/hybrid/              ModernBERT + stylometric features (Nidhruva)
-    notebooks/two_stage/           source-first (Ding), veracity-first and ISOT test (Nidhruva)
 
 Data is not included. See the paper for sources.
 
